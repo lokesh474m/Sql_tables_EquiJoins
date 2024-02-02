@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emp_mgr_dept</title>
+</head>
+<body>
+    <center>
+        <h1>EMP_MGR_DEPT_TABLE</h1>
+        <table border="2px" cellpadding="3px" cellspacing="0px">
+            <tr>
+                <th>Ename</th>
+                <th>Empno</th>
+                <th>JOB</th>
+                <th>HIREDATE</th>
+                <th>SAL</th>
+                <th>COMM</th>
+                <th>Mgrname</th>
+                <th>MgrEmpno</th>
+                <th>MgrJob</th>
+                <th>MgrHiredate</th>
+                <th>Mgrsal</th>
+                <th>Mgrcomm</th>
+                <th>Deptno</th>
+                <th>Dname</th>
+                <th>Dlocation</th>
+            </tr>
+            {% for emd in emd %}
+            <tr>
+
+                <td>{{emd.Ename}}</td>
+                <td>{{emd.Empno}}</td>
+                <td>{{emd.job}}</td>
+                <td>{{emd.hiredate}}</td>
+                <td>{{emd.sal}}</td>
+                <td>{{emd.comm}}</td>
+                <td>{{emd.mgr.Ename}}</td>
+                <td>{{emd.mgr.Empno}}</td>
+                <td>{{emd.mgr.job}}</td>
+                <td>{{emd.mgr.hiredate}}</td>
+                <td>{{emd.mgr.sal}}</td>
+                <td>{{emd.mgr.Comm}}</td>
+                <td>{{emd.deptno.deptno}}</td>
+                <td>{{emd.deptno.dname}}</td>
+                <td>{{emd.deptno.dlocation}}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
